@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+}
+
+nav > h2 > a {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.links {
+  margin-left: auto;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+}
+
+.links > li {
+  cursor: pointer;
+}
+
+.links > li > a {
+  text-decoration: none;
+  color: #333;
+}
+.links > li > a:hover {
+  color: #555;
+}
