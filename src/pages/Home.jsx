@@ -1,3 +1,5 @@
+import styles from './Home.module.css'
+
 import { useState, useEffect } from 'react'
 
 const Home = () => {
@@ -45,16 +47,17 @@ const Home = () => {
   }, [concentration, amountCoffee, amountBrew])
 
   return (
-    <div className="calc">
+    <div className={styles.calc}>
       <h1>BREW A CUP</h1>
-      <label htmlFor="coffee">Amount of Coffee (g)</label>
-      <input id="coffee" type="number" placeholder="Enter amount of coffee" onChange={(e) => setAmountCoffee(e.target.value)} value={amountCoffee} />
-
       <label htmlFor="brew">Size of Brew (ml) <br/></label>
       <input id="brew" type="number" placeholder="Max volume of cup" onChange={(e) => setAmountBrew(e.target.value)} value={amountBrew} />
 
-      <p>Coffee: {amountCoffee}g</p>
+      <label htmlFor="coffee">Amount of Coffee (g)</label>
+      <input id="coffee" type="number" placeholder="Enter amount of coffee" onChange={(e) => setAmountCoffee(e.target.value)} value={amountCoffee} />
+
+
       <p>Brew: {amountBrew}ml</p>
+      <p>Coffee: {amountCoffee}g</p>
       <p>Concentration</p>
       <div className="concentration-bar" 
       style={{width: concentration * 10}}
@@ -65,7 +68,7 @@ const Home = () => {
 
       <textarea rows="5" cols="40" placeholder="Notes" value={notes} onChange={(e) => setNotes(e.target.value)} ></textarea>
 
-      <button className="save-btn" onClick={saveBrew}>Save</button>
+      <button className={styles.saveButton} onClick={saveBrew}>Save</button>
     </div>
   )
 }

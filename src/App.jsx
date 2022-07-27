@@ -1,4 +1,4 @@
-import './App.css'
+import styles from './App.module.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ import Signup from './pages/Signup'
 function App() {
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <BrowserRouter>
         <Navbar />
         <Routes>
