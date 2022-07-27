@@ -1,0 +1,81 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  width: 80%;
+  text-align: center;
+  margin: 10px auto;
+  padding: 1em 0 0.5em 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  align-items: center;
+  margin: 50px auto 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  margin-top: 10px;
+  margin-right: auto;
+  font-size: large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: .25em;
+  padding: 10px 5px;
+  margin: 5px 0;
+  font-size: large;
+  width: 100%;
+  text-align: center;
+}
+
+button.save-btn {
+  width: 10em;
+  padding: 5px 10px;
+  margin: 3em 0;
+  background-color: rgb(187, 255, 127);
+  border: 2px solid rgb(0, 76, 18);
+  border-radius: 1em;
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(0, 69, 19);
+}
+
+.concentration-bar {
+  height: 2em;
+  border-radius: 8px;
+  background-color: lightcoral;
+  max-width: 100%;
+  transition: .5s ease;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  margin-top: 10px;
+}
+
+p {
+  text-align: left;
+  width: 100%;
+  margin: 5px 0;
+}
+
+textarea {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  margin-top: 20px;
+}
