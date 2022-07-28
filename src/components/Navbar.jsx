@@ -21,7 +21,7 @@ const Navbar = () => {
         {user && <li><Link to='/brews'>Brews</Link></li>}
         {!user && <li><Link to='/login'>Login</Link></li>}
         {!user && <li><Link to='/signup'>Signup</Link></li>}
-        {user && <li><button onClick={logout}>Logout</button></li>}
+        {user && <li><button className={styles['logout-button']} onClick={logout}>Logout</button></li>}
       </ul>
     </nav>
   )

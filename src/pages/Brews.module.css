@@ -3,7 +3,26 @@
   100% {-webkit-transform: rotate(360deg);}   
 }
 
+.brews {
+  padding: 0 4em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .brews {
+    padding: 0;
+  }
+  .brews > h2 {
+    padding-left: 1em;
+  }
+}
+
 .loadingIcon {
   width: 3em;
   animation: spin 2s infinite linear;
+  margin: 2em auto 0 auto;
 }

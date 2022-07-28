@@ -4,7 +4,25 @@ h1 {
   text-align: center;
   margin: 10px auto;
   padding: 1em 0 0.5em 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  background-color: #fbfff6;
+  display: block;
+  max-width: 450px;
+  width: 100vw;
+  margin: 5em auto 0 auto;
+  border: 2px solid #333;
+  border-radius: .25em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .container {
+    border: none;
+    margin-top: 0;
+    background-color: white;
+  }
 }
 
 .calc {
@@ -12,15 +30,14 @@ h1 {
   flex-direction: column;
   width: 20em;
   align-items: center;
-  margin: 50px auto 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
 }
 
 label {
   margin-top: 10px;
   margin-right: auto;
   font-size: large;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 input {
@@ -31,18 +48,20 @@ input {
   font-size: large;
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .saveButton {
-  width: 10em;
+  width: 6em;
   padding: 5px 10px;
   margin: 3em 0;
-  background-color: rgb(187, 255, 127);
-  border: 2px solid rgb(0, 76, 18);
-  border-radius: 1em;
+  background-color: rgb(255, 252, 242);
+  border: 1px solid #FD5956;
+  border-radius: .25em;
   font-weight: bold;
   font-size: medium;
-  color: rgb(0, 69, 19);
+  color: #FD5956;
+  cursor: pointer;
 }
 
 .concentration-bar {
@@ -51,7 +70,7 @@ input {
   background-color: lightcoral;
   max-width: 100%;
   transition: .5s ease;
-  color: white;
+  color: rgb(255, 244, 244);
   text-align: center;
   line-height: 2em;
   margin-top: 10px;
@@ -68,6 +87,8 @@ textarea {
   border-radius: 5px;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: medium;
   margin-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }

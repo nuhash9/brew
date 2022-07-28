@@ -19,11 +19,15 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/brews' element={
-          <>
+            <>
             {user ? <Brews /> : <Navigate to='/login'/>}
-          </>
+            </>
           }/>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/login' element={
+            <>
+            {user ? <Navigate to='/brews' /> : <Login />}
+            </>
+          } />
           <Route path='/signup' element={<Signup />}/>
         </Routes>
       </BrowserRouter>

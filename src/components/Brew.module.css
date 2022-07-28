@@ -1,0 +1,35 @@
+.brew {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e7f9fa;
+  padding: 2em;
+  border-radius: .3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+  row-gap: 1em;
+  text-align: center;
+}
+
+.brew .fa {
+  padding: 0 10px;
+}
+
+.brew .notes {
+  padding: 1em 1em;
+  grid-column: 1 / main-end;
+  background-color: rgb(253, 255, 247);
+  border-radius: .3em;
+  text-align: left;
+}
+
+.notes-toggle {
+  cursor: pointer;
+}
+
+.delete-button {
+  cursor: pointer;
+  transition: .25s ease-out;
+}
+.delete-button:hover {
+  color: rgb(255, 28, 126);
+}
