@@ -1,28 +1,40 @@
 import { db } from '../firebase/config'
-import { getDocs, collection } from 'firebase/firestore'
-import { useEffect, useState } from 'react'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { useEffect, useState, useRef } from 'react'
 
-const useCollection = (coll) => {
+const useCollection = (coll, qArr) => {
   const [data, setData] = useState([])
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
 
+  const queryArr = useRef(qArr)
+
   useEffect(() => {
     const getData = async () => {
       setData([])
-      const snapshot = await getDocs(collection(db, coll))
-    
-      let results = []
-      snapshot.forEach((doc) => {
-        results.push({id: doc.id, ...doc.data()})
-      })
+
+      const collRef = collection(db, coll)
+
+      let q = query(collRef)
+      if (queryArr) {
+        q = query(collRef, where(...queryArr.current))
+      }
+      try {
+        const snapshot = await getDocs(q)
+        let results = []
+        snapshot.forEach((doc) => {
+          results.push({id: doc.id, ...doc.data()})
+        })
+        setData(results)
+        setIsLoading(false)
+      }
+      catch (err) {
+        console.log(err.message)
+      }
       
-      setData(results)
-      setIsLoading(false)
-      console.log(data)
     }
     getData()
-  }, [coll])
+  }, [coll, queryArr])
 
   return { data, isLoading, error }
 }

@@ -2,13 +2,11 @@ import styles from './Brews.module.css'
 
 import { useEffect } from "react"
 import useCollection from "../hooks/useCollection"
+import useAuthContext from '../hooks/useAuthContext'
 
 const Brews = () => {
-  const { data: brews, isLoading, error } = useCollection('brews')
-
-  useEffect(() => {
-    console.log(brews)
-  }, [brews])
+  const { user } = useAuthContext()
+  const { data: brews, isLoading, error } = useCollection('brews', ['userId', '==', `${user.uid}`])
 
   return (
     <div className="brews">

@@ -16,10 +16,10 @@ nav > h2 > a {
 }
 
 .links > li {
-  cursor: pointer;
 }
 
 .links > li > a {
+  cursor: pointer;
   text-decoration: none;
   color: #333;
 }

@@ -62,12 +62,9 @@ const Home = () => {
       <label htmlFor="coffee">Amount of Coffee (g)</label>
       <input id="coffee" type="number" placeholder="Enter amount of coffee" onChange={(e) => setAmountCoffee(e.target.value)} value={amountCoffee} />
 
-
-      <p>Brew: {amountBrew}ml</p>
-      <p>Coffee: {amountCoffee}g</p>
       <p>Concentration</p>
-      <div className="concentration-bar" 
-      style={{width: concentration * 10}}
+      <div className={styles['concentration-bar']} 
+      style={{width: `${concentration * 10}%`}}
       >{Math.floor(concentration)} g/ml</div>
       <input type="range" min="0" max="10" name="conc" id="conc" value={concentration} onChange={handleConc} />
       
