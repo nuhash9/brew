@@ -5,7 +5,7 @@ import { createContext, useEffect, useReducer } from "react"
 export const AuthContext = createContext()
 
 const authReducer = (state, {type, payload}) => {
-  console.log(type, payload)
+  // console.log(type, payload)
 
   switch(type) {
     case 'LOGIN':
@@ -30,14 +30,7 @@ export const AuthContextProvider = ({children}) => {
           type: 'LOGIN',
           payload: user
         })
-
-        return unsub()
       }
-      dispatch({
-        type: 'LOGOUT',
-        payload: null
-      })
-      
       return unsub()
     })
     

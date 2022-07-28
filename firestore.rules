@@ -8,5 +8,9 @@ service cloud.firestore {
       	if request.auth != null &&
         request.resource.data.createdBy == request.auth.uid
     }
+
+    match /brews/{id} {
+    	allow read: if request.auth != null
+    }
   }
 }

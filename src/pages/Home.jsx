@@ -1,6 +1,8 @@
 import styles from './Home.module.css'
 
 import { useState, useEffect } from 'react'
+import useAddDoc from '../hooks/useAddDoc'
+import useAuthContext from '../hooks/useAuthContext'
 
 const Home = () => {
   const [amountCoffee, setAmountCoffee] = useState('')
@@ -9,16 +11,21 @@ const Home = () => {
   const [concentration, setConcentration] = useState('')
   const [notes, setNotes] = useState('')
 
+  const {user} = useAuthContext()
+
+  const addData = useAddDoc('brews')
+
   const saveBrew = () => {
     let brew = {
         amountCoffee,
         amountBrew,
-        concentration,
-        notes
+        notes,
+        userId: user.uid
     }
 
     console.log(brew)
-}
+    addData(brew)
+  }
 
   const handleConc = (e) => {
     const newConc = e.target.value
