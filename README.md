@@ -3,4 +3,4 @@ App to calculate coffee brew concentration and demonstrate CRUD functionality us
 Also using: Firebase Auth, Firebase Hosting
 
 ## Demo
-https://learning-firebase-bd42b.web.app
+https://brew.nuhash.me
